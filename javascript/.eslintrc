@@ -1,0 +1,22 @@
+env:
+  browser: true
+  amd: true
+extends: standard
+rules:
+  comma-dangle:
+    - error
+    - always-multiline
+  no-return-assign:
+    - error
+    - always
+  no-cond-assign:
+    - error
+    - always
+  no-plusplus:
+    - error
+    - allowForLoopAfterthoughts: true
+  space-before-function-paren:
+    - error
+    - anonymous: always
+      named: never
+      asyncArrow: always

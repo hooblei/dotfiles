@@ -1,0 +1,16 @@
+[user]
+	name = maresp
+	email = me@cubeball.net
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[difftool]
+    prompt = false
+[difftool "icdiff"]
+    cmd = icdiff --cols=180 --highlight --line-numbers --show-all-spaces $LOCAL $REMOTE | less -R

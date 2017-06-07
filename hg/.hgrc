@@ -1,0 +1,13 @@
+[pager]
+pager = LESS='FSRX' less
+
+[ui]
+maresp = markus espenhain <me@cubeball.net>
+username = maresp
+
+[extensions]
+hgext.graphlog = 
+hgext.purge =
+color =
+hgext.convert =
+pager =

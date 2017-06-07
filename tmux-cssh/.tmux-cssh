@@ -1,0 +1,4 @@
+dkuim_web:-u root -sc lx70.spieletips.de -sc lx71.spieletips.de -sc lx72.spieletips.de
+dkuim_web2:-u root -sc 10.10.10.11 -sc 10.10.10.12 -sc 10.10.10.13
+dkuim_db:-u root -sc lx73.spieletips.de -sc lx74.spieletips.de
+filer_prod:-u root -sc 10.10.12.21 -sc 10.10.12.22
