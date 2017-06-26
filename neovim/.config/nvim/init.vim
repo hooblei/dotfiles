@@ -28,7 +28,7 @@ set wildignorecase
 set wildignore+=*.swp,*.pyc,*.bak,*.class,*.orig
 set wildignore+=.git,.hg,.bzr,.svn
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.svg
-set wildignore+=build/*,tmp/*,vendor/cache/*,bin/*,dist/*
+set wildignore+=build/*,tmp/*,vendor/cache/*,dist/*
 set wildignore+=*node_modules/*,*/target/*
 
 set number relativenumber numberwidth=3
