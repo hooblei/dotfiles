@@ -1,5 +1,6 @@
 
 set editing-mode vi
+set keymap vi-command
 
 # hn04/05 suse key fix
 "\e[7~": beginning-of-line
