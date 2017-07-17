@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# This will install the version 2.2.2 of GNU stow in ~/local
+
+set -e
+
+STOW_VERSION=2.2.2
+
+mkdir -p ${HOME}/local/{bin,lib,share,src,stow}
+
+cd ${HOME}/local/src
+curl http://ftp.gnu.org/gnu/stow/stow-${STOW_VERSION}.tar.gz | tar -xzf -
+
+cd ${HOME}/local/src/stow-${STOW_VERSION}
+./configure --prefix=${HOME}/local/stow/stow-${STOW_VERSION}
+make
+make install
+
+cd ${HOME}/local/stow
+./stow-${STOW_VERSION}/bin/stow stow-${STOW_VERSION}
+
+echo "Installed GNU stow in ${HOME}/local/bin"
