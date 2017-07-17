@@ -1,1 +1,1 @@
-/home/maresp/.vimrc
+../.vimrc
