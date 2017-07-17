@@ -34,12 +34,7 @@ if $TERM =~ '^screen' | set t_Co=256 | endif
 if $TERM =~ '^rxvt-unicode' | set t_Co=256 | endif
 if $TERM =~ '^xterm' | set t_Co=256 | endif
 
-" pathogen
-"
-" https://github.com/tpope/vim-pathogen
-" See bundle/Makefile for plugs and tasks
-execute pathogen#infect()
-
+source ~/.vim/plugs.vim
 
 syntax on
 
@@ -415,10 +410,6 @@ endif
 
 
 
-"
-"
-let g:sparkupExecuteMapping = '<c-h>'
-
 " re-indent xml(F3) and JSON (F4) docs that are one lineres
 "
 "map <F3> :%s/>\s*</>\r</g<CR>:set ft=xml<CR>ggVG=
@@ -453,27 +444,6 @@ endif
 if executable(local_eslint)
   let g:syntastic_javascript_eslint_exec = local_eslint
 endif
-
-
-" Unite
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-"nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec:!<cr>
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file buffer<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer buffer<cr>
-
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-endfunction
 
 " Writing
 let g:vimroom_backgroud = '#00f5f6f6'
