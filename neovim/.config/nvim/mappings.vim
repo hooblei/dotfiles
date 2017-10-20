@@ -60,4 +60,3 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 :tnoremap <Esc> <C-\><C-n>
 :tnoremap <C-h> <C-\><C-n><C-w>h
 :tnoremap <C-l> <C-\><C-n><C-w>l
- 

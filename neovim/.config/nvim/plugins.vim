@@ -6,10 +6,7 @@ func! s:define_plugins()
   " https://github.com/ElmCast/elm-vim or https://github.com/lambdatoast/elm.vim
   " https://github.com/terryma/vim-multiple-cursors
   " https://github.com/luochen1990/rainbow
-  " https://github.com/junegunn/vim-easy-align
-  " https://github.com/junegunn/fzf
   " https://github.com/kopischke/vim-stay
-  " https://github.com/junegunn/goyo.vim
   " https://github.com/MattesGroeger/vim-bookmarks
   " https://github.com/mattn/emmet-vim
   "
@@ -18,7 +15,6 @@ func! s:define_plugins()
   " mxw/vim-jsx
   " Lokaltog/vim-easymotion
   " tpope/vim-fugitive
-  " mileszs/ack.vim
   " zah/nimrod.vim
   " wlangstroth/vim-racket
   " pydoc.vim
@@ -30,18 +26,25 @@ func! s:define_plugins()
   "Plug 'benekastah/neomake'
   Plug 'bling/vim-bufferline'
   "Plug 'digitaltoad/vim-pug'
-  Plug 'fatih/vim-go', { 'tag': '*' }
+  Plug 'docunext/closetag.vim'
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'fatih/vim-go', { 'tag': '*' }
   Plug 'elmcast/elm-vim'
   Plug 'Glench/Vim-Jinja2-Syntax'
+  Plug 'guns/vim-sexp'
   Plug 'gorodinskiy/vim-coloresque'
   Plug 'groenewege/vim-less'
   "Plug 'hylang/vim-hy'
   "Plug 'jceb/vim-orgmode'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/goyo.vim'
   Plug 'kassio/neoterm'
+  Plug 'kien/rainbow_parentheses.vim'
   "Plug 'krisajenkins/vim-pipe'
   Plug 'krisajenkins/vim-postgresql-syntax'
   Plug 'leafgarland/typescript-vim'
+  Plug 'mileszs/ack.vim'
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
@@ -59,10 +62,14 @@ func! s:define_plugins()
   "Plug 'tommcdo/vim-exchange'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-eunuch'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fireplace'
   Plug 'tpope/vim-markdown'
   Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-sexp-mappings-for-regular-people'
   Plug 'tpope/vim-speeddating'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
   Plug 'vim-erlang/erlang-motions.vim'
   Plug 'vim-erlang/vim-erlang-compiler'
   Plug 'vim-erlang/vim-erlang-omnicomplete'
@@ -81,7 +88,7 @@ func! s:configure_plugins()
   let g:sparkupExecuteMapping = '<c-h>'
 
   " airblade/vim-gitgutter
-  let g:gitgutter_sign_column_always = 1
+  set signcolumn=yes
 
   " Lokaltog/vim-easymotion
   "   prefix default keybinding
@@ -209,6 +216,14 @@ func! s:configure_plugins()
 
   " Git commands
   command! -nargs=+ Tg :T git <args>
+
+  " tpope/vim-fireplace
+  nnoremap <silent> ,eo :Eval<cr>
+
+  " junegunn/fzf.vim
+  nmap ; :Buffers<CR>
+  nmap <leader>f :Files<CR>
+  nmap <leader>t :Tags<CR>
 endfunc
 
 
