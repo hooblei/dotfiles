@@ -26,7 +26,7 @@ func! s:define_plugins()
   "Plug 'benekastah/neomake'
   Plug 'bling/vim-bufferline'
   "Plug 'digitaltoad/vim-pug'
-  Plug 'docunext/closetag.vim'
+  "Plug 'docunext/closetag.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'tag': '*' }
   Plug 'elmcast/elm-vim'
@@ -45,6 +45,7 @@ func! s:define_plugins()
   Plug 'krisajenkins/vim-postgresql-syntax'
   Plug 'leafgarland/typescript-vim'
   Plug 'mileszs/ack.vim'
+  Plug 'mattn/emmet-vim'
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
@@ -52,8 +53,7 @@ func! s:define_plugins()
   Plug 'posva/vim-vue'
   Plug 'qpkorr/vim-bufkill'
   Plug 'Raimondi/delimitMate'
-  Plug 'rstacruz/sparkup'
-  "Plug 'scrooloose/syntastic'
+  "Plug 'rstacruz/sparkup'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   "Plug 'Shougo/neocomplete.vim'
   "Plug 'Shougo/unite.vim'
@@ -224,6 +224,13 @@ func! s:configure_plugins()
   nmap ; :Buffers<CR>
   nmap <leader>f :Files<CR>
   nmap <leader>t :Tags<CR>
+
+  " mattn/emmet-vim
+  " use emmet onlin in html/css files
+  let g:user_emmet_install_global = 0
+  autocmd FileType html,css EmmetInstall
+  " map emmet ladder to <c-m>,
+  "let g:user_emmet_leader_key='<C-M>'
 endfunc
 
 
