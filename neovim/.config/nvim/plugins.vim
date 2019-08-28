@@ -206,6 +206,7 @@ func! s:configure_plugins()
 
   " kassio/neoterm
   "let g:neoterm_position = 'vertical'
+  let g:neoterm_default_mod = 'vertical'
   let g:neoterm_automap_keys = ',tt'
   "nnoremap <silent> <f10> :TREPLSendFile<cr>
   "nnoremap <silent> <f9> :TREPLSendLine<cr>
