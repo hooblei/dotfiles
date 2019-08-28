@@ -15,8 +15,7 @@ func! s:define_plugins()
   " mxw/vim-jsx
   " Lokaltog/vim-easymotion
   " tpope/vim-fugitive
-  " zah/nimrod.vim
-  " wlangstroth/vim-racket
+  " 
   " pydoc.vim
   " Shutnik/jshint2.vim
   "
@@ -24,6 +23,7 @@ func! s:define_plugins()
 
   Plug 'airblade/vim-gitgutter'
   "Plug 'benekastah/neomake'
+  Plug 'bakpakin/janet.vim'
   Plug 'bling/vim-bufferline'
   "Plug 'digitaltoad/vim-pug'
   "Plug 'docunext/closetag.vim'
@@ -36,6 +36,7 @@ func! s:define_plugins()
   Plug 'groenewege/vim-less'
   "Plug 'hylang/vim-hy'
   "Plug 'jceb/vim-orgmode'
+  Plug 'jpalardy/vim-slime'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/goyo.vim'
@@ -44,6 +45,7 @@ func! s:define_plugins()
   "Plug 'krisajenkins/vim-pipe'
   Plug 'krisajenkins/vim-postgresql-syntax'
   Plug 'leafgarland/typescript-vim'
+  Plug 'LnL7/vim-nix'
   Plug 'mileszs/ack.vim'
   Plug 'mattn/emmet-vim'
   Plug 'mustache/vim-mustache-handlebars'
@@ -53,8 +55,8 @@ func! s:define_plugins()
   Plug 'posva/vim-vue'
   Plug 'qpkorr/vim-bufkill'
   Plug 'Raimondi/delimitMate'
-  "Plug 'rstacruz/sparkup'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'rstacruz/sparkup'
+  "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   "Plug 'Shougo/neocomplete.vim'
   "Plug 'Shougo/unite.vim'
   "Plug 'sjl/tslime.vim'
@@ -75,9 +77,11 @@ func! s:define_plugins()
   Plug 'vim-erlang/vim-erlang-omnicomplete'
   Plug 'vim-erlang/vim-erlang-runtime'
   Plug 'w0rp/ale'
+  Plug 'wlangstroth/vim-racket'
   "Plug 'vim-erlang/vim-erlang-skeletons'
   "Plug 'vim-erlang/vim-erlang-tags'
   "Plug 'vim-scripts/dbext.vim'
+  Plug 'zah/nim.vim'
   Plug 'zchee/deoplete-go', { 'do': 'make' }
 
   call plug#end()
@@ -144,7 +148,7 @@ func! s:configure_plugins()
 
   " Shougo/deoplete.nvim
   let g:deoplete#enable_at_startup = 1
-	let g:deoplete#disable_auto_complete = 1
+  let g:deoplete#disable_auto_complete = 1
   "let g:deoplete#enable_smart_case = 1
 	"let g:deoplete#enable_profile = 1
   "call deoplete#enable_logging('DEBUG', 'deoplete.log')
@@ -152,20 +156,20 @@ func! s:configure_plugins()
 	"inoremap <silent><expr> <C-p>
   "    \ pumvisible() ? "\<C-n>" :
   "    \ deoplete#mappings#manual_complete()
-	inoremap <silent><expr> <TAB>
-				\ pumvisible() ? "\<C-n>" :
-				\ <SID>check_back_space() ? "\<TAB>" :
-				\ deoplete#mappings#manual_complete()
-	function! s:check_back_space() abort "{{{
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-	endfunction"}}}
+  inoremap <silent><expr> <TAB>
+              \ pumvisible() ? "\<C-n>" :
+              \ <SID>check_back_space() ? "\<TAB>" :
+              \ deoplete#mappings#manual_complete()
+  function! s:check_back_space() abort "{{{
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction"}}}
 
   " zchee/deoplete-go
   let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
-	let g:deoplete#sources#go#use_cache = 1
-	let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/${GOOS}_${GOARCH}'
-	let g:deoplete#sources#go#package_dot = 1
+  let g:deoplete#sources#go#use_cache = 1
+  let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/${GOOS}_${GOARCH}'
+  let g:deoplete#sources#go#package_dot = 1
 
   "" scrooloose/syntastic
   ""let g:syntastic_debug = 0
@@ -197,11 +201,11 @@ func! s:configure_plugins()
   "endif
 
   "" vim-slime
-  "let g:slime_target = "tmux"
-  "let g:slime_paste_file = "$HOME/.slime_paste"
+  let g:slime_target = "tmux"
+  let g:slime_paste_file = "$HOME/.slime_paste"
 
   " kassio/neoterm
-  let g:neoterm_position = 'horizontal'
+  "let g:neoterm_position = 'vertical'
   let g:neoterm_automap_keys = ',tt'
   "nnoremap <silent> <f10> :TREPLSendFile<cr>
   "nnoremap <silent> <f9> :TREPLSendLine<cr>
